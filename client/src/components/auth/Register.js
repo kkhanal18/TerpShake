@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
@@ -28,6 +27,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       register({ name, email, password });
     }
   };
+
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <Fragment>
@@ -94,7 +98,11 @@ Register.propTypes = {
   isAuthenticated: PropTypes.bool
 };
 
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { setAlert, register }
 )(Register);
