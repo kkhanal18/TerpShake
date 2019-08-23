@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import alert from "./alert";
 import auth from "./auth";
+import profile from "./profile";
 
 // import authReducer from './authReducer';
 // import errorReducer from './errorReducer';
@@ -9,7 +10,8 @@ import auth from "./auth";
 
 export default combineReducers({
   alert,
-  auth
+  auth,
+  profile
   //   auth: authReducer,
   //   errors: errorReducer,
   //   profile: profileReducer,
