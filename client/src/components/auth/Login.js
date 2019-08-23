@@ -26,14 +26,15 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
+    <div className="mt-3">
       <h1 className="large text-primary">Login</h1>
       <p className="lead">
         <i className="fas fa-user" /> Login Into Your Account
       </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
+      <form onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input
+            className="form-control"
             type="email"
             placeholder="Email Address"
             name="email"
@@ -43,6 +44,7 @@ const Login = ({ login, isAuthenticated }) => {
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="password"
             placeholder="Password"
             name="password"
@@ -57,7 +59,7 @@ const Login = ({ login, isAuthenticated }) => {
       <p className="my-1">
         Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
-    </Fragment>
+    </div>
   );
 };
 
