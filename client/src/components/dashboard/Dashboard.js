@@ -2,10 +2,11 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
+import { Link } from "react-router-dom";
+
 // import {  deleteAccount } from '../../actions/profile';
 
 import Spinner from "../tools/Spinner";
-import { Link } from "react-router-dom";
 import DashboardAction from "./DashboardAction";
 import Experience from "./Experience";
 import Education from "./Education";
