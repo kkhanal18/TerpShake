@@ -3,11 +3,11 @@ import { setAlert } from "./alert";
 
 import {
   GET_PROFILE,
-  PROFILE_ERROR
+  PROFILE_ERROR,
+  GET_PROFILES,
   //   UPDATE_PROFILE,
   //   DELETE_ACCOUNT,
-  //   CLEAR_PROFILE,
-  //   GET_PROFILES,
+  CLEAR_PROFILE
   //   GET_REPOS
 } from "./types";
 
@@ -38,10 +38,19 @@ export const createProfile = (
   try {
     const config = {
       headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Content-Type": "application/json"
       }
     };
+
+    const res = await axios.post("/api/profile", formData, config);
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data
+    });
+    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "sucess"));
+    if (!edit) {
+      history.push("/dashboard");
+    }
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
@@ -53,6 +62,43 @@ export const createProfile = (
         msg: error.response.statusText,
         status: error.response.status
       }
+    });
+  }
+};
+
+//Get all profiles
+export const getProfiles = () => async dispatch => {
+  dispatch({ type: CLEAR_PROFILE });
+  try {
+    const res = await axios.get("/api/profile");
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data
+    });
+  } catch (error) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status
+      }
+    });
+  }
+};
+
+//Get profile by id
+export const getProfileById = userId => async dispatch => {
+  try {
+    const res = await axios.get(`/api/profile/user/${userId}`);
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
     });
   }
 };
