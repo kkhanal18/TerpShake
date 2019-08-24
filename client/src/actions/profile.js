@@ -49,7 +49,7 @@ export const createProfile = (
       type: GET_PROFILE,
       payload: res.data
     });
-    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "sucess"));
+    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
     if (!edit) {
       history.push("/dashboard");
     }
@@ -119,7 +119,8 @@ export const addExperience = (formData, history) => async dispatch => {
       type: UPDATE_PROFILE,
       payload: res.data
     });
-    dispatch(setAlert("Experience added", "sucess"));
+    dispatch(setAlert("Experience added", "success"));
+
     history.push("./dashboard");
   } catch (err) {
     const errors = err.response.data.errors;
@@ -147,7 +148,7 @@ export const addEducation = (formData, history) => async dispatch => {
       type: UPDATE_PROFILE,
       payload: res.data
     });
-    dispatch(setAlert("Education added", "sucess"));
+    dispatch(setAlert("Education added", "success"));
     history.push("./dashboard");
   } catch (err) {
     const errors = err.response.data.errors;

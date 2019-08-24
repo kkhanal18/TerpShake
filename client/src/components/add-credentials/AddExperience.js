@@ -25,7 +25,7 @@ const AddExperience = ({ addExperience, history }) => {
   return (
     <div className="mt-3">
       <section class="container">
-        <h1 class="large text-primary">Add An Experience</h1>
+        <h1>Add An Experience</h1>
         <p class="lead">
           <i class="fas fa-code-branch" /> Add any jobs/internships that you
           have had in the past

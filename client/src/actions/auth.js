@@ -1,11 +1,11 @@
 import axios from "axios";
 import { setAlert } from "./alert";
 import {
-  REGISTER_SUCESS,
+  REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
-  LOGIN_SUCESS,
+  LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
   CLEAR_PROFILE
@@ -47,7 +47,7 @@ export const register = ({ name, email, password }) => async dispatch => {
     // this will register the data
     const res = await axios.post("/api/users", body, config);
     dispatch({
-      type: REGISTER_SUCESS,
+      type: REGISTER_SUCCESS,
       payload: res.data
     });
     dispatch(loadUser());
@@ -76,7 +76,7 @@ export const login = (email, password) => async dispatch => {
   try {
     const res = await axios.post("/api/auth", body, config);
     dispatch({
-      type: LOGIN_SUCESS,
+      type: LOGIN_SUCCESS,
       payload: res.data
     });
     dispatch(loadUser());

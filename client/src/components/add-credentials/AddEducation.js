@@ -33,7 +33,7 @@ const AddEducation = ({ addEducation, history }) => {
   return (
     <div className="mt-3">
       <section class="container">
-        <h1 class="large text-primary">Add Education</h1>
+        <h1>Add Education</h1>
         <p class="lead">
           <i class="fas fa-code-branch" /> Add any schools have attended
         </p>
