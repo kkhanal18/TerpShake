@@ -19,11 +19,20 @@ const ProfileItem = ({
         </div>
         <div className="col-sm-auto">
           <h2>{name}</h2>
-          <p>
-            {status} {company && <span> at {company}</span>}
-          </p>
-          <p className="my-1">{location && <span>{location}</span>}</p>
-          <Link to={`/profile/${_id}`} className="btn btn-dark">
+          {status}{" "}
+          {company && (
+            <span>
+              {" "}
+              at {company}
+              <br />
+            </span>
+          )}
+          {location && (
+            <span>
+              {location} <br />
+            </span>
+          )}
+          <Link to={`/profile/${_id}`} className="btn btn-dark mt-2">
             View Profile
           </Link>
         </div>

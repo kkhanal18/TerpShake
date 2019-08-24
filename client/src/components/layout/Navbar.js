@@ -63,8 +63,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     >
       <h1 className="navbar navbar-dark">
         <Link className="navbar-brand" to="/">
-          <i class="fas fa-laptop" />
-          Terp Portal
+          <i className="fas fa-laptop" /> Terp Portal
         </Link>
       </h1>
       {!loading && (

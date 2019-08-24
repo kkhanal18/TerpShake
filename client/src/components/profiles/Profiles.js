@@ -17,8 +17,8 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Fragment>
           <h1>Terps</h1>
           <p>
-            <i className="fab fa-connectdevelop" /> Browse and connect with
-            Terps
+            <i class="far fa-address-book" /> Browse and connect with UMD
+            students and alumni
           </p>
           <div className="profiles">
             {profiles.length > 0 ? (

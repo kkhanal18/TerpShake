@@ -12,7 +12,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
   return loading ? (
     <Spinner />
   ) : (
-    <Fragment>
+    <div className="mt-3">
       <h1>Posts</h1>
       <p className="lead">
         <i className="fas fa-user" /> Welcome to the community
@@ -23,7 +23,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
           <PostItem key={post._id} post={post} />
         ))}
       </div> */}
-    </Fragment>
+    </div>
   );
 };
 

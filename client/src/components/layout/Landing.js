@@ -11,13 +11,13 @@ const Landing = ({ isAuthenticated }) => {
       <div className="container">
         <div className="dark-overlay">
           <div className="landing-inner">
-            <h1 className="x-large">Terp Connector</h1>
-            <p className="lead">
+            <h1>Terp Portal</h1>
+            <p>
               Design a profile/portfolio, share posts and get help from other
               UMD students/alumni
             </p>
             <div className="buttons">
-              <Link to="/register" className="btn btn-primary">
+              <Link to="/register" className="btn btn-dark">
                 Sign Up
               </Link>
               {"    "}

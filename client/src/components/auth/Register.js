@@ -42,7 +42,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input
-            className="form-control"
+            className="form-control input-sm"
             type="text"
             placeholder="Name"
             name="name"
