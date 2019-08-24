@@ -96,6 +96,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Company"
             value={company}
@@ -108,6 +109,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Website"
             value={website}
@@ -120,6 +122,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Location"
             value={location}
@@ -132,6 +135,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="* Skills"
             value={skills}
@@ -144,6 +148,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <textarea
+            className="form-control"
             placeholder="A short bio of yourself"
             value={bio}
             onChange={e => onChange(e)}
@@ -158,7 +163,7 @@ const EditProfile = ({
             className="btn btn-light"
           >
             Add Social Network Links
-          </button>
+          </button>{" "}
           <span>Optional</span>
         </div>
         {displaySocialInputs && (
@@ -214,7 +219,7 @@ const EditProfile = ({
               />
             </div>
           </Fragment>
-        )}
+        )}{" "}
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
           Go Back

@@ -61,7 +61,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       className="navbar navbar-expand-md navbar-dark"
       style={{ "background-color": "#545454" }}
     >
-      <h1 className="navbar navbar-dark">
+      <h1 className="navbar navbar-dark p-0">
         <Link className="navbar-brand" to="/">
           <i className="fas fa-laptop" /> Terp Portal
         </Link>

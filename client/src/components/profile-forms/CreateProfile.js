@@ -73,6 +73,7 @@ const CreateProfile = ({ createProfile, history }) => {
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Company"
             value={company}
@@ -85,6 +86,7 @@ const CreateProfile = ({ createProfile, history }) => {
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Website"
             value={website}
@@ -97,6 +99,7 @@ const CreateProfile = ({ createProfile, history }) => {
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Location"
             value={location}
@@ -109,6 +112,7 @@ const CreateProfile = ({ createProfile, history }) => {
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="* Skills"
             value={skills}

@@ -235,6 +235,7 @@ class CreateProfile extends Component {
                   error={errors.location}
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
+
                 <TextFieldGroup
                   placeholder="* Skills"
                   name="skills"
