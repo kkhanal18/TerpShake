@@ -12,6 +12,7 @@ const CreateProfile = ({ createProfile, history }) => {
     status: "",
     skills: "",
     bio: "",
+    avatar_link: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -28,6 +29,7 @@ const CreateProfile = ({ createProfile, history }) => {
     status,
     skills,
     bio,
+    avatar_link,
     twitter,
     facebook,
     linkedin,
@@ -131,6 +133,17 @@ const CreateProfile = ({ createProfile, history }) => {
             name="bio"
           />
           <small className="form-text">Tell us a little about yourself</small>
+        </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Profile image URL"
+            value={avatar_link}
+            onChange={e => onChange(e)}
+            name="skills"
+          />
+          <small className="form-text">Link to profile image</small>
         </div>
         <div className="my-2">
           <button

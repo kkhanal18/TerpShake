@@ -6,69 +6,78 @@ import { logout } from "../../actions/auth";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul className="navbar-nav ml-auto flex-row">
-        <li className="nav-item">
-          <Link className="nav-link" to="/profiles">
-            Terps
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/posts">
-            Posts
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/dashboard">
-            <i className="fas fa-user" />
-            <span className="hide-sm"> Dashboard</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" onClick={logout} to="/">
-            <i className="fas fa-sign-out-alt" />
-            {"  "}
-            <span className="hide-sm">Logout</span>{" "}
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link" to="/profiles">
+          Terps
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/posts">
+          Forum
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/dashboard">
+          {/* <i className="fas fa-user" /> */}
+          Dashboard
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" onClick={logout} to="/">
+          {/* <i className="fas fa-sign-out-alt" /> */}
+          {"  "}
+          Logout
+        </Link>
+      </li>
+    </Fragment>
   );
   const guestLinks = (
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul className="navbar-nav ml-auto flex-row">
-        <li className="nav-item">
-          <Link className="nav-link" to="/profiles">
-            Terps
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/register">
-            Register
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link" to="/profiles">
+          Terps
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/register">
+          Register
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/login">
+          Login
+        </Link>
+      </li>
+    </Fragment>
   );
 
   return (
     <nav
-      className="navbar navbar-expand-md navbar-dark"
-      style={{ "background-color": "#545454" }}
+      className="navbar navbar-expand-sm navbar-dark"
+      style={{ "background-color": "#ff4f42" }}
     >
-      <h1 className="navbar navbar-dark p-0">
+      <div className="container">
         <Link className="navbar-brand" to="/">
-          <i className="fas fa-laptop" /> Terp Portal
+          <i className="fas fa-laptop" />
+          Terp Portal
         </Link>
-      </h1>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
+        {/* <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarMain"
+        >
+          <span class="navbar-toggler-icon" />
+        </button> */}
+        {!loading && (
+          <div className="collapse navbar-collapse" id="navbarMain">
+            <ul className="navbar-nav mr-auto">
+              {isAuthenticated ? authLinks : guestLinks}
+            </ul>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

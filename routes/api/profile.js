@@ -6,32 +6,31 @@ const { check, validationResult } = require("express-validator/check");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 
-// @route   GET api/profile/me
-// @desc    Get current users
-// @access  Private
-
+// @route GET api/profile/me
+// @desc Get current user's profile
+// @acess Private
 router.get("/me", auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.user.id }).populate(
-      "user",
-      ["name", "avatar"]
-    );
+    const profile = await Profile.findOne({
+      user: req.user.id
+    }).populate("user", ["name", "avatar"]);
 
     if (!profile) {
-      return res.status(400).json({ msg: "There is no profile for this user" });
+      res.status(404).json({
+        msg: "There is no profile for this user"
+      });
     }
 
-    res.send(profile);
+    res.json(profile);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server error");
+    res.status(500).send("Server Error");
   }
 });
 
-// @route   POST api/profile/
-// @desc    Create or update user profile
-// @access  Private
-
+// @route POST api/profile
+// @desc Create or update a user profile
+// @acess Private
 router.post(
   "/",
   [
@@ -52,13 +51,13 @@ router.post(
         errors: errors.array()
       });
     }
-
     const {
       company,
       website,
       location,
       bio,
       status,
+      githubusername,
       skills,
       youtube,
       facebook,
@@ -67,8 +66,7 @@ router.post(
       linkedin
     } = req.body;
 
-    // Build profile object
-
+    //Build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
@@ -76,10 +74,10 @@ router.post(
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
     if (skills) {
       profileFields.skills = skills.split(",").map(skill => skill.trim());
     }
-
     //Build social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
@@ -112,7 +110,7 @@ router.post(
       await profile.save();
       res.json(profile);
     } catch (err) {
-      console.error(err.message);
+      console.error(err.msg);
       res.status(500).send("Server Error");
     }
   }
@@ -162,7 +160,7 @@ router.get("/user/:user_id", async (req, res) => {
 router.delete("/", auth, async (req, res) => {
   try {
     //Remove user posts
-    // await Posts.deleteMany({ user: req.user.id });
+    await Posts.deleteMany({ user: req.user.id });
     //Remove profile
     await Profile.findOneAndRemove({
       user: req.user.id
@@ -188,7 +186,6 @@ router.delete("/", auth, async (req, res) => {
 // @route PUT api/profile/experience
 // @desc Add experience to a profile
 // @acess Private
-
 router.put(
   "/experience",
   [
@@ -266,18 +263,17 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
 });
 
 // @route PUT api/profile/education
-// @desc Add education to a profile
+// @desc Add educatin to a profile
 // @acess Private
-
 router.put(
   "/education",
   [
     auth,
     [
-      check("school", "Title is required")
+      check("school", "School is required")
         .not()
         .isEmpty(),
-      check("degree", "Company is required")
+      check("degree", "Degree is required")
         .not()
         .isEmpty(),
       check("fieldofstudy", "Field of study is required")
@@ -327,7 +323,7 @@ router.put(
   }
 );
 
-// @route DELETE api/profile/education/:edu_id
+// @route DELETE api/profile/education/:exp_id
 // @desc Delete education from profile
 // @acess Private
 router.delete("/education/:edu_id", auth, async (req, res) => {
@@ -338,7 +334,7 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
     //Get remove index
     const removeIndex = profile.education
       .map(item => item.id)
-      .indexOf(req.params.exp_id);
+      .indexOf(req.params.edu_id);
     profile.education.splice(removeIndex, 1);
     await profile.save();
     res.json(profile);

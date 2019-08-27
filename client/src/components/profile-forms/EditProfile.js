@@ -17,6 +17,7 @@ const EditProfile = ({
     status: "",
     skills: "",
     bio: "",
+    avatar_link: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -36,6 +37,8 @@ const EditProfile = ({
       status: loading || !profile.status ? "" : profile.status,
       skills: loading || !profile.skills ? "" : profile.skills.join(","),
       bio: loading || !profile.bio ? "" : profile.bio,
+      avatar_link: loading || !profile.avatar_link ? "" : profile.avatar_link,
+
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
@@ -51,6 +54,7 @@ const EditProfile = ({
     status,
     skills,
     bio,
+    avatar_link,
     twitter,
     facebook,
     linkedin,
@@ -155,6 +159,17 @@ const EditProfile = ({
             name="bio"
           />
           <small className="form-text">Tell us a little about yourself</small>
+        </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Profile image URL"
+            value={avatar_link}
+            onChange={e => onChange(e)}
+            name="avatar_link"
+          />
+          <small className="form-text">Link to profile image</small>
         </div>
         <div className="my-2">
           <button

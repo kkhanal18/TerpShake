@@ -21,6 +21,7 @@ class CreateProfile extends Component {
       status: "",
       skills: "",
       bio: "",
+      avatar_link: "",
       twitter: "",
       facebook: "",
       linkedin: "",
@@ -52,6 +53,9 @@ class CreateProfile extends Component {
       profile.company = !isEmpty(profile.company) ? profile.company : "";
       profile.website = !isEmpty(profile.website) ? profile.website : "";
       profile.location = !isEmpty(profile.location) ? profile.location : "";
+      profile.avatar_link = !isEmpty(profile.avatar_link)
+        ? profile.avatar_link
+        : "";
 
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
       profile.social = !isEmpty(profile.social) ? profile.social : {};
@@ -80,6 +84,7 @@ class CreateProfile extends Component {
         status: profile.status,
         skills: skillsCSV,
         bio: profile.bio,
+        avatar_link: profile.avatar_link,
         twitter: profile.twitter,
         facebook: profile.facebook,
         linkedin: profile.linkedin,
@@ -97,6 +102,7 @@ class CreateProfile extends Component {
       company: this.state.company,
       website: this.state.website,
       location: this.state.location,
+      avatar_link: this.state.avatar_link,
       status: this.state.status,
       skills: this.state.skills,
       bio: this.state.bio,
@@ -252,6 +258,14 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.bio}
                   info="Tell us a little about yourself"
+                />
+                <TextAreaFieldGroup
+                  placeholder="Avatar Link"
+                  name="avatar_link"
+                  value={this.state.avatar_link}
+                  onChange={this.onChange}
+                  error={errors.avatar_link}
+                  info="Enter avatar link"
                 />
 
                 <div className="mb-3">
