@@ -14,7 +14,7 @@ const ProfileItem = ({
 }) => {
   console.log("avatar link", avatar_link);
   return (
-    <div className="row">
+    <div className="row m-0">
       <div className="col-">
         <img src={avatar_link} />
       </div>
