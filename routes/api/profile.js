@@ -63,7 +63,9 @@ router.post(
       facebook,
       twitter,
       instagram,
-      linkedin
+      linkedin,
+      // Added this for profile image testing .. (CDL)
+      avatar_link
     } = req.body;
 
     //Build profile object
@@ -78,6 +80,8 @@ router.post(
     if (skills) {
       profileFields.skills = skills.split(",").map(skill => skill.trim());
     }
+    if (avatar_link) profileFields.avatar_link = avatar_link;
+
     //Build social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;

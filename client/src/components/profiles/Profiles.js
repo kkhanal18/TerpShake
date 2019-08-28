@@ -2,31 +2,29 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../tools/Spinner";
-import { getProfiles } from "../../actions/profile";
 import ProfileItem from "./ProfileItem";
+import { getProfiles } from "../../actions/profile";
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
   }, [getProfiles]);
+
   return (
-    <div className="mt-3">
+    <Fragment>
       {loading ? (
-        Spinner
+        <Spinner />
       ) : (
         <Fragment>
-          <h1>Terps</h1>
-          <p>
-            <i class="far fa-address-book" /> Browse and connect with UMD
-            students and alumni
+          <h1 className="large text-primary">Developers</h1>
+          <p className="lead">
+            <i className="fab fa-connectdevelop" /> Browse and connect with
+            developers
           </p>
           <div className="profiles">
             {profiles.length > 0 ? (
               profiles.map(profile => (
-                <div>
-                  <ProfileItem key={profile._id} profile={profile} />
-                  <br />
-                </div>
+                <ProfileItem key={profile._id} profile={profile} />
               ))
             ) : (
               <h4>No profiles found...</h4>
@@ -34,7 +32,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </div>
         </Fragment>
       )}
-    </div>
+    </Fragment>
   );
 };
 
@@ -42,11 +40,12 @@ Profiles.propTypes = {
   getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
-const mapStatetoProps = state => ({
+
+const mapStateToProps = state => ({
   profile: state.profile
 });
 
 export default connect(
-  mapStatetoProps,
+  mapStateToProps,
   { getProfiles }
 )(Profiles);

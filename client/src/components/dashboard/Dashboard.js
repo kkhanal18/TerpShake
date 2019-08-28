@@ -30,7 +30,6 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardAction id={profile._id} />
-          {console.log(profile._id)}
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
           <div className="my-2">

@@ -52,7 +52,10 @@ router.post(
         name,
         email,
         avatar,
-        password
+        password,
+        // Added this for profile image testing .. (CDL)
+
+        avatar_link
       });
 
       const salt = await bcrypt.genSalt(10);
