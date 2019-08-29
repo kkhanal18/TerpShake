@@ -16,7 +16,7 @@ const ProfileItem = ({
   return (
     <div className="row m-0">
       <div className="col-">
-        <img src={avatar_link} />
+        <img className="avatar" src={avatar_link} />
       </div>
       <div className="col">
         <h2>{name}</h2>

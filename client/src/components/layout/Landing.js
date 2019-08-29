@@ -2,34 +2,23 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import LandingTop from "../landing/LandingTop";
+import Features from "../landing/Features";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <section className="landing">
+    <div className="bg-custom">
       <div className="container">
-        <div className="dark-overlay">
-          <div className="landing-inner">
-            <h1>Terp Portal</h1>
-            <p>
-              Design a profile/portfolio, share posts and get help from other
-              UMD students/alumni
-            </p>
-            <div className="buttons">
-              <Link to="/register" className="btn btn-dark">
-                Sign Up
-              </Link>
-              {"    "}
-              <Link to="/login" className="btn btn-light">
-                Login
-              </Link>
-            </div>
+        <div className="row">
+          <div className="col">
+            <LandingTop />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

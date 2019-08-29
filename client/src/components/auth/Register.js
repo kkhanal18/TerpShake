@@ -34,64 +34,77 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <div className="mt-3">
-      <h1>Sign Up</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Create Your Account
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            className="form-control input-sm"
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={e => onChange(e)}
-            // required
-          />
+    <div className="row mt-3 px-2">
+      <div className="col-md-6 mx-auto">
+        <div className="card">
+          <div className="card-body">
+            <div className="text-center">
+              <h1>Sign Up</h1>
+              <p className="lead">
+                <i className="fas fa-user" /> Create Your Account
+              </p>
+            </div>
+            <form className="form" onSubmit={e => onSubmit(e)}>
+              <label htmlFor="email">Name</label>
+
+              <div className="form-group">
+                <input
+                  className="form-control input-sm"
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={e => onChange(e)}
+                  // required
+                />
+              </div>
+              <label htmlFor="email">Email</label>
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                />
+                <small className="form-text"></small>
+              </div>
+              <label htmlFor="email">Password</label>
+
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  minLength="6"
+                  value={password}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+              <label htmlFor="email">Confirm Password</label>
+
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="password"
+                  name="password2"
+                  minLength="6"
+                  value={password2}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+              <input
+                type="submit"
+                className="btn btn-dark btn-block"
+                value="Register"
+              />
+            </form>
+            <span className="my-1" style={{ opacity: ".7" }}>
+              Already have an account?
+            </span>{" "}
+            <Link to="/login">Sign In</Link>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-          />
-          <small className="form-text">
-            {/* This site uses Gravatar so if you want a profile image, use a
-            Gravatar email */}
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="password"
-            placeholder="Password"
-            name="password"
-            minLength="6"
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            minLength="6"
-            value={password2}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <input type="submit" className="btn btn-dark" value="Register" />
-      </form>
-      <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
-      </p>
+      </div>
     </div>
   );
 };

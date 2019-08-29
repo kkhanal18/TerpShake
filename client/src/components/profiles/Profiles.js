@@ -16,9 +16,10 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <div className="mt-3">
-          <h1>Developers</h1>
+          <h1>Terps</h1>
           <p>
-            <i className="far fa-list-alt" /> Browse and connect with developers
+            <i className="far fa-list-alt" /> Browse and connect with UMD
+            studets and alumni
           </p>
           <div>
             {profiles.length > 0 ? (

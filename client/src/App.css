@@ -57,6 +57,17 @@
   font-size: 17px !important;
 }
 
+.avatar {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  background-color: #fff;
+}
+
 /* .nav-link :hover {
   color: rgb(79, 0, 0) !important;
 } */
+
+.top-banner {
+  background-color: #c0392b;
+}

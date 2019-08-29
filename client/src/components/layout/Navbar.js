@@ -59,24 +59,22 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <i className="fas fa-laptop" />
-          Terp Portal
+          <i className="fas fa-laptop m0" /> Portal
         </Link>
-        {/* <button
+        <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarMain"
         >
-          <span class="navbar-toggler-icon" />
-        </button> */}
-        {!loading && (
-          <div className="collapse navbar-collapse" id="navbarMain">
-            <ul className="navbar-nav mr-auto">
-              {isAuthenticated ? authLinks : guestLinks}
-            </ul>
-          </div>
-        )}
+          <span className="navbar-toggler-icon" />
+        </button>
+
+        <div className="navbar-collapse" id="navbarMain">
+          <ul className="navbar-nav mr-auto">
+            {isAuthenticated ? authLinks : guestLinks}
+          </ul>
+        </div>
       </div>
     </nav>
   );

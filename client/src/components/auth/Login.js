@@ -26,39 +26,57 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <div className="mt-3">
-      <h1>Login</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Login Into Your Account
-      </p>
-      <form onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="password"
-            placeholder="Password"
-            name="password"
-            minLength="6"
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
+    <div className="row mt-3 px-2">
+      <div className="col-md-6 mx-auto">
+        <div className="card">
+          <div className="card-body">
+            {/* 
+      
+         */}
+            <div className="text-center">
+              <h1>
+                <i className="fas fa-user" /> Login
+              </h1>
+            </div>
+            <form onSubmit={e => onSubmit(e)}>
+              <label htmlFor="email">Email</label>
 
-        <input type="submit" className="btn btn-dark" value="Login" />
-      </form>
-      <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
-      </p>
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="email"
+                  // placeholder="Email Address"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+              <label htmlFor="password">Password</label>
+
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  minLength="6"
+                  value={password}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+
+              <input
+                type="submit"
+                className="btn btn-dark btn-block"
+                value="Login"
+              />
+            </form>
+            <span className="my-1" style={{ opacity: ".6" }}>
+              Don't have an account?
+            </span>{" "}
+            <Link to="/register">Sign Up</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
