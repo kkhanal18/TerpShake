@@ -7,7 +7,6 @@ import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
-// import ProfileGithub from "./ProfileGithub";
 import { getProfileById } from "../../actions/profile";
 
 const Profile = ({
@@ -21,18 +20,18 @@ const Profile = ({
   }, [getProfileById, match.params.id]);
 
   return (
-    <div className="mt-3">
+    <Fragment>
       {profile === null || loading ? (
         <Spinner />
       ) : (
-        <Fragment>
-          <Link to="/profiles" className="btn btn-light">
+        <div className="mt-3">
+          <Link to="/profiles" className="btn btn-dark">
             Back To Profiles
           </Link>{" "}
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
-              <Link to="/edit-profile" className="btn btn-dark">
+              <Link to="/edit-profile" className="btn btn-danger">
                 Edit Profile
               </Link>
             )}
@@ -40,7 +39,7 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className="profile-exp bg-white p-2">
-              <h2>Experience</h2>
+              <h2 className="underlined-title">Experience</h2>
               {profile.experience.length > 0 ? (
                 <Fragment>
                   {profile.experience.map(experience => (
@@ -56,7 +55,7 @@ const Profile = ({
             </div>
 
             <div className="profile-edu bg-white p-2">
-              <h2>Education</h2>
+              <h2 className="underlined-title">Education</h2>
               {profile.education.length > 0 ? (
                 <Fragment>
                   {profile.education.map(education => (
@@ -70,14 +69,10 @@ const Profile = ({
                 <h4>No education credentials</h4>
               )}
             </div>
-
-            {/* {profile.githubusername && (
-              <ProfileGithub username={profile.githubusername} />
-            )} */}
           </div>
-        </Fragment>
+        </div>
       )}
-    </div>
+    </Fragment>
   );
 };
 

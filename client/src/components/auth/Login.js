@@ -38,7 +38,7 @@ const Login = ({ login, isAuthenticated }) => {
                 <i className="fas fa-user" /> Login
               </h1>
             </div>
-            <form onSubmit={e => onSubmit(e)}>
+            <form className="form-signin" onSubmit={e => onSubmit(e)}>
               <label htmlFor="email">Email</label>
 
               <div className="form-group">

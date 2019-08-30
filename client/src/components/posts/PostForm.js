@@ -8,7 +8,7 @@ const PostForm = ({ addPost }) => {
 
   return (
     <div className="my-3">
-      <h3>Say Something...</h3>
+      {/* <h3>Say Something...</h3> */}
       <form
         className="form my-1"
         onSubmit={e => {
@@ -22,7 +22,7 @@ const PostForm = ({ addPost }) => {
           name="text"
           cols="30"
           rows="5"
-          placeholder="Create a discussion"
+          placeholder="Start a thread"
           value={text}
           onChange={e => setText(e.target.value)}
           required

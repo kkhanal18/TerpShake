@@ -141,7 +141,7 @@ const CreateProfile = ({ createProfile, history }) => {
             placeholder="Profile image URL"
             value={avatar_link}
             onChange={e => onChange(e)}
-            name="skills"
+            name="avatar_link"
           />
           <small className="form-text">Link to profile image</small>
         </div>
@@ -157,10 +157,11 @@ const CreateProfile = ({ createProfile, history }) => {
         </div>
         {displaySocialInputs && (
           <Fragment>
-            <div className="form-group social-input">
-              <i className="fab fa-twitter fa-2x" />
+            <div className="form-group">
+              <i className="fab fa-twitter fa-2x" />{" "}
               <input
                 type="text"
+                className="form-control"
                 placeholder="Twitter URL"
                 value={twitter}
                 onChange={e => onChange(e)}
@@ -168,6 +169,7 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-facebook fa-2x" />
               <input
                 type="text"
@@ -188,6 +190,7 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-linkedin fa-2x" />
               <input
                 type="text"
@@ -198,6 +201,7 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-instagram fa-2x" />
               <input
                 type="text"

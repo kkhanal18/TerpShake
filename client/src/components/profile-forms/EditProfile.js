@@ -184,6 +184,7 @@ const EditProfile = ({
         {displaySocialInputs && (
           <Fragment>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-twitter fa-2x" />
               <input
                 type="text"
@@ -194,6 +195,7 @@ const EditProfile = ({
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-facebook fa-2x" />
               <input
                 type="text"
@@ -204,6 +206,7 @@ const EditProfile = ({
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-youtube fa-2x" />
               <input
                 type="text"
@@ -214,6 +217,7 @@ const EditProfile = ({
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-linkedin fa-2x" />
               <input
                 type="text"
@@ -224,6 +228,7 @@ const EditProfile = ({
               />
             </div>
             <div className="form-group social-input">
+              {" "}
               <i className="fab fa-instagram fa-2x" />
               <input
                 type="text"
