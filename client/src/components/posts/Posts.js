@@ -5,6 +5,7 @@ import Spinner from "../tools/Spinner";
 import PostItem from "./PostItem";
 import PostForm from "./PostForm";
 import { getPosts } from "../../actions/post";
+import { getProfileById } from "../../actions/profile";
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
+  // getProfileById: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired
 };
 

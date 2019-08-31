@@ -29,7 +29,6 @@ const ProfileItem = ({
           <Link to={`/profile/${_id}`} className="btn btn-dark">
             View Profile{" "}
             <i class="fa fa-chevron-circle-right" aria-hidden="true" />
-            &nbsp;
           </Link>
         </div>
         <br />

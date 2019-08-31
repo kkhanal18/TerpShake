@@ -14,28 +14,30 @@ const CommentItem = ({
 }) => (
   <div className="post">
     <div>
-      <Link to={`/profile/${user}`}>
-        <img className="round-img" src={avatar_link} alt="" />
-        <img src={avatar_link} />
-        {console.log(avatar_link)}
-
-        <h4>{name}</h4>
-      </Link>
-    </div>
-    <div>
-      <p>{text}</p>
       <p className="post-date">
         Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
+        <br />
+        By <Link to={`/profile/${user}`}>{name}</Link>
       </p>
-      {!auth.loading && user === auth.user._id && (
-        <button
-          onClick={() => deleteComment(postId, _id)}
-          type="button"
-          className="btn btn-danger"
-        >
-          <i className="fas fa-times" />
-        </button>
-      )}
+    </div>
+
+    <div>
+      <p>
+        {text}
+
+        {!auth.loading && user === auth.user._id && (
+          <span>
+            {" "}
+            <button
+              onClick={() => deleteComment(postId, _id)}
+              type="button"
+              className="btn btn-sm btn-danger"
+            >
+              <i className="fas fa-times" />
+            </button>
+          </span>
+        )}
+      </p>
     </div>
   </div>
 );
@@ -44,8 +46,7 @@ CommentItem.propTypes = {
   postId: PropTypes.string.isRequired,
   comment: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  deleteComment: PropTypes.func.isRequired,
-  avatar_link: PropTypes.string.isRequired
+  deleteComment: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
