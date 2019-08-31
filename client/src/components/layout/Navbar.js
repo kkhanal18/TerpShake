@@ -55,7 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <nav
       className="navbar navbar-expand-sm navbar-dark"
-      style={{ "background-color": "#ff4f42" }}
+      style={{ "background-color": "#e03434" }}
     >
       <div className="container">
         <Link className="navbar-brand" to="/">

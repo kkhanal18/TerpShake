@@ -40,10 +40,10 @@ const PostItem = ({
           >
             <i className="far fa-thumbs-down" />
           </button>{" "}
-          <Link to={`/posts/${_id}`} className="btn btn-dark">
-            Replies
+          <Link to={`/posts/${_id}`} className="btn btn-primary">
+            Replies{" "}
             {comments.length > 0 && (
-              <span className="comment-count">- {comments.length}</span>
+              <span className="badge badge-light">{comments.length}</span>
             )}
           </Link>{" "}
           {!auth.loading && user === auth.user._id && (

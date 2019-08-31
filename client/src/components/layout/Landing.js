@@ -10,12 +10,17 @@ const Landing = ({ isAuthenticated }) => {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <div className="bg-custom">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <LandingTop />
-          </div>
+    <div className="landing">
+      <div className="dark-overlay">
+        <div className="landing-inner">
+          <h1> Start your career path right.</h1>
+          <p>
+            Search for jobs. Setup a profile to impress employers. And get help
+            from UMD students and alumni.
+          </p>
+          <Link to="/register" className="btn btn-danger">
+            Get Started
+          </Link>
         </div>
       </div>
     </div>

@@ -5,18 +5,27 @@ import { Link, Redirect } from "react-router-dom";
 const LandingTop = () => {
   return (
     <div className="mt-3">
-      <h3>Job search made easy</h3>
-      <div className="col">
-        <div className="row">Search for jobs</div>
-        <div className="row">Setup up portfolio</div>
-        <div className="row">Get help from other UMD students and alumni</div>
-        <br />
+      <div className="card" style={{ width: "25%" }}>
+        <div className="card-body">
+          <p className="card-text">
+            <i class="far fa-check-square"></i> Search for jobs on job board
+          </p>
+          <p className="card-text">
+            <i class="far fa-check-square"></i> Setup up portfolio to impress
+            employeers
+          </p>
+          <p className="card-text">
+            <i class="far fa-check-square"></i> Get help from other UMD students
+            and alumni
+          </p>
+          <Link to="/register" className="btn btn-dark">
+            Get Started
+          </Link>
+        </div>
       </div>
-      <div>
-        <Link to="/register" className="btn btn-dark">
-          Sign Up
-        </Link>
-      </div>
+      <div></div>
+      {/* <h3>Job search made easy</h3>
+      
       {/* <Link to="/login" className="btn btn-light">
         Login
       </Link> */}

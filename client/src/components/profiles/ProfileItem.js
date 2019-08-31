@@ -12,29 +12,38 @@ const ProfileItem = ({
     avatar_link
   }
 }) => {
-  console.log("avatar link", avatar_link);
   return (
-    <div className="row m-0">
-      <div className="col-">
-        <img className="avatar" src={avatar_link} />
-      </div>
-      <div className="col">
+    <div className="profile bg-light">
+      <img className="round-img" src={avatar_link} />
+      <div>
         <h2>{name}</h2>
         <p>
-          {status} {company && <span> at {company}</span>}
+          <b>{status}</b>
+          {company && <span> at {company}</span>}
+          <br />
+          {location && <span>{location}</span>}
         </p>
-        <p>{location && <span>{location}</span>}</p>
-        <Link to={`/profile/${_id}`} className="btn btn-dark">
-          View Profile
-        </Link>
       </div>
-      {/* <ul>
-        {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
-            <i className="fas fa-check" /> {skill}
-          </li>
-        ))}
-      </ul> */}
+      <div>
+        <div>
+          <Link to={`/profile/${_id}`} className="btn btn-dark">
+            View Profile{" "}
+            <i class="fa fa-chevron-circle-right" aria-hidden="true" />
+            &nbsp;
+          </Link>
+        </div>
+        <br />
+        <div>
+          <b>Areas of Expertise</b>
+          <div>
+            {skills.slice(0, 4).map((skill, index) => (
+              <span key={index} style={{ color: "black" }}>
+                <div className="badge badge-secondary">{skill}</div>&nbsp;
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

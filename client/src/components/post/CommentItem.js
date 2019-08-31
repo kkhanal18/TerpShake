@@ -16,6 +16,9 @@ const CommentItem = ({
     <div>
       <Link to={`/profile/${user}`}>
         <img className="round-img" src={avatar_link} alt="" />
+        <img src={avatar_link} />
+        {console.log(avatar_link)}
+
         <h4>{name}</h4>
       </Link>
     </div>
@@ -41,7 +44,8 @@ CommentItem.propTypes = {
   postId: PropTypes.string.isRequired,
   comment: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  deleteComment: PropTypes.func.isRequired
+  deleteComment: PropTypes.func.isRequired,
+  avatar_link: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({

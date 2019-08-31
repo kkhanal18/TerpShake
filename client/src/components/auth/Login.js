@@ -28,14 +28,14 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <div className="row mt-3 px-2">
       <div className="col-md-6 mx-auto">
-        <div className="card">
+        <div className="card bg-light">
           <div className="card-body">
             {/* 
       
          */}
             <div className="text-center">
               <h1>
-                <i className="fas fa-user" /> Login
+                <i class="fas fa-sign-in-alt"></i> Login
               </h1>
             </div>
             <form className="form-signin" onSubmit={e => onSubmit(e)}>
@@ -70,10 +70,10 @@ const Login = ({ login, isAuthenticated }) => {
                 value="Login"
               />
             </form>
-            <span className="my-1" style={{ opacity: ".6" }}>
-              Don't have an account?
-            </span>{" "}
-            <Link to="/register">Sign Up</Link>
+            <div className="mt-3 mb-0">
+              <span style={{ opacity: ".6" }}>Don't have an account?</span>{" "}
+              <Link to="/register">Sign Up</Link>
+            </div>
           </div>
         </div>
       </div>

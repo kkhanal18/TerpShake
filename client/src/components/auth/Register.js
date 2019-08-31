@@ -36,13 +36,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <div className="row mt-3 px-2">
       <div className="col-md-6 mx-auto">
-        <div className="card">
+        <div className="card bg-light">
           <div className="card-body">
             <div className="text-center">
-              <h1>Sign Up</h1>
-              <p className="lead">
-                <i className="fas fa-user" /> Create Your Account
-              </p>
+              <h1>
+                <i class="fas fa-user"></i> Sign Up
+              </h1>
             </div>
             <form className="form" onSubmit={e => onSubmit(e)}>
               <label htmlFor="email">Name</label>
@@ -98,10 +97,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 value="Register"
               />
             </form>
-            <span className="my-1" style={{ opacity: ".7" }}>
-              Already have an account?
-            </span>{" "}
-            <Link to="/login">Sign In</Link>
+            <div className="mt-3 mb-0">
+              <span style={{ opacity: ".6" }}>Already have an account?</span>{" "}
+              <Link to="/login">Login</Link>
+            </div>
           </div>
         </div>
       </div>

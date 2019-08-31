@@ -83,7 +83,7 @@ const EditProfile = ({
       <small>* = required field</small>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <select value={status} onChange={e => onChange(e)} name="status">
+          {/* <select value={status} onChange={e => onChange(e)} name="status">
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Developer</option>
             <option value="Junior Developer">Junior Developer</option>
@@ -93,7 +93,15 @@ const EditProfile = ({
             <option value="Instructor">Instructor or Teacher</option>
             <option value="Intern">Intern</option>
             <option value="Other">Other</option>
-          </select>
+          </select> */}
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Position"
+            value={status}
+            onChange={e => onChange(e)}
+            name="status"
+          />
           <small className="form-text">
             Give us an idea of where you are at in your career
           </small>
