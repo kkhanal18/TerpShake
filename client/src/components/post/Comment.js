@@ -30,7 +30,6 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
               comment={comment}
               postId={post._id}
             />
-            <hr />
           </div>
         ))}
       </div>

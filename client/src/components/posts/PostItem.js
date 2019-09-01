@@ -16,53 +16,64 @@ const PostItem = ({
   getProfileById
 }) => {
   return (
-    <div className="mt-1">
-      <div>
-        <p style={{ fontSize: "30px" }}>{text}</p>
-        <p className="post-date">
-          <Link to={`/profile/${user}`} style={{ color: "black" }}>
-            {name}
-          </Link>{" "}
-          <span style={{ opacity: 0.5 }}>
-            | Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
-          </span>
-        </p>
-
-        {showActions && (
-          <Fragment>
-            <button
-              onClick={() => addLike(_id)}
-              type="button"
-              className="btn btn-light"
-            >
-              <i className="far fa-thumbs-up" />{" "}
-              <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
-            </button>{" "}
-            <button
-              onClick={() => removeLike(_id)}
-              type="button"
-              className="btn btn-light"
-            >
-              <i className="far fa-thumbs-down" />
-            </button>{" "}
-            <Link to={`/posts/${_id}`} className="btn btn-primary">
-              Replies{" "}
-              {comments.length > 0 && (
-                <span className="badge badge-light">{comments.length}</span>
-              )}
+    <div className="card rounded-top my-3">
+      <div className="card-body mx-0">
+        <div className="row">
+          <div className="col">
+            <Link to={`/profile/${user}`} style={{ color: "black" }}>
+              {name}
             </Link>{" "}
-            {!auth.loading && user === auth.user._id && (
-              <button
-                onClick={() => deletePost(_id)}
-                type="button"
-                className="btn btn-danger"
-              >
-                <i className="fas fa-times" />
-              </button>
-            )}
-            <hr />
-          </Fragment>
-        )}
+            <br />
+            <span style={{ opacity: 0.5 }}>
+              <Moment format="MM/DD/YYYY">{date}</Moment>
+            </span>
+          </div>
+          <div className="col-10">
+            {text}
+            <br />
+
+            <div>
+              <Link to={`/posts/${_id}`} className="btn btn-small btn-primary">
+                Replies{" "}
+                {comments.length > 0 && (
+                  <span className="badge badge-light">{comments.length}</span>
+                )}
+              </Link>{" "}
+              {!auth.loading && user === auth.user._id && (
+                <button
+                  onClick={() => deletePost(_id)}
+                  type="button"
+                  className="btn btn-small btn-danger"
+                >
+                  <i className="fas fa-times" />
+                </button>
+              )}
+              {showActions && (
+                <Fragment>
+                  {" "}
+                  <button
+                    onClick={() => addLike(_id)}
+                    type="button"
+                    className="btn btn-dark"
+                  >
+                    <i className="far fa-thumbs-up" />{" "}
+                    <span>
+                      {likes.length > 0 && <span>{likes.length}</span>}
+                    </span>
+                  </button>
+                  <span> </span>
+                  <button
+                    onClick={() => removeLike(_id)}
+                    type="button"
+                    className="btn btn-dark"
+                  >
+                    <i className="far fa-thumbs-down" />
+                  </button>
+                </Fragment>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -61,20 +61,21 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link className="navbar-brand" to="/">
           <i className="fas fa-laptop m0" /> Terp Portal
         </Link>
-        {/* <button
+        <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarMain"
+          aria-expanded="false"
         >
           <span className="navbar-toggler-icon" />
-        </button> */}
+        </button>
 
-        <div className="navbar-collapse" id="navbarMain">
+        <div className="navbar-collapse in" id="navbarMain">
           <ul className="navbar-nav mr-auto">
-            {!loading && (
-              <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-            )}{" "}
+            {/* {!loading && ( */}
+            {isAuthenticated ? authLinks : guestLinks}
+            {/* )} */}
           </ul>
         </div>
       </div>
