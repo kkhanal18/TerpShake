@@ -1,6 +1,8 @@
 Full Stack social network application with porfolio and discussion board. Developed using **ReactJS+Redux** with **NodeJS (Express)**, **RESTful API**, **MongoDB**, and 
 **JWT authentication**
 
+[Live Demo](http://bit.ly/TerpShake)
+
 ## How to run this code
 1. Make sure MongoDB is running on your system
 2. Clone this repository
