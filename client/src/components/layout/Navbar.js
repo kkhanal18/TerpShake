@@ -59,7 +59,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <i className="fas fa-laptop m0" /> Terp Portal
+          <i className="fas fa-laptop m0" /> Terp Shake
         </Link>
         <button
           className="navbar-toggler"
