@@ -1,4 +1,4 @@
-Full Stack social network application with porfolio and discussion board. Developed using **ReactJS+Redux** with **NodeJS (Express)**, **RESTful API**, **MongoDB**, and 
+Full Stack social network application with portfolio and discussion board. Developed using **ReactJS+Redux** with **NodeJS (Express)**, **RESTful API**, **MongoDB**, and 
 **JWT authentication**
 
 [Live Demo](http://bit.ly/TerpShake)
